@@ -11,14 +11,16 @@
     #terminal { animation: typing 0.02s steps(1) forwards; }
     @keyframes typing { 0% { opacity: 0; } 100% { opacity: 1; } }
     .ascii-art { margin-top: 2rem; color: #0f0; font-size: 0.9rem; white-space: pre; }
+    a { color: #0f0; }
   </style>
 </head>
 <body>
-<audio id="type-sfx" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
 <audio autoplay loop>
-<source src="Trump.mp3" type="audio/mpeg">
+  <source src="your-song.mp3" type="audio/mpeg">
 </audio>
-  <pre id="terminal">
+
+<pre id="terminal">
 [ SYSTEM TRACE LOG — USER: Torque_Sovereign — vBulletin Terminal Export ]
 ----------------------------------------------------------------------
 > POSTED: 11-19-2004, 03:46 AM
@@ -55,8 +57,9 @@ Torque_Sovereign
 [ REPLY by NeuralLinkerZ — 11-19-2004, 04:02 AM ]
 > bro you shaved caps??? lmao
 >> this rig is a fire hazard and a personality test
-  </pre>
-  <div class="ascii-art">
+</pre>
+
+<div class="ascii-art">
 ASCII GPU-Z SCREENSHOT DUMP:
 ------------------------------------------
 GPU: GeForce 6800 Ultra
@@ -71,22 +74,42 @@ Temp: 68°C (load)
 Fan Speed: ~4100 RPM
 PerfCap Reason: Thermal
 ------------------------------------------
-  </div>
-  <div class="cursor">█</div>
-  <script>
-    const sfx = document.getElementById('type-sfx');
-    const term = document.getElementById('terminal');
-    let i = 0;
-    const text = term.textContent;
-    term.textContent = '';
-    function typeLine() {
-      if (i < text.length) {
-        term.textContent += text[i++];
-        if (text[i - 1] !== '\n') sfx.play();
-        setTimeout(typeLine, 5);
-      }
+</div>
+
+<pre id="dylan-detect"></pre>
+<pre>
+[ System Note ]
+“You didn’t believe me about the graphic cores.
+
+But you’re still here, aren’t you?”
+
+→ <a href="/logs.html">[view logs]</a>
+</pre>
+<div class="cursor">█</div>
+
+<script>
+  const term = document.getElementById('terminal');
+  let i = 0;
+  const text = term.textContent;
+  term.textContent = '';
+  function typeLine() {
+    if (i < text.length) {
+      term.textContent += text[i++];
+      setTimeout(typeLine, 5);
     }
-    typeLine();
-  </script>
+  }
+  typeLine();
+
+  const dylanInfo = "INFERENCE TRIGGERED: PROBABLE IDENTITY MATCH\n\nUSER ENVIRONMENT DETECTED:\n• OS: " + navigator.platform + "\n• Display Resolution: " + screen.width + "x" + screen.height + "\n• Browser: " + navigator.userAgent + "\n\nCONFIDENCE: HIGH\nPSYCHOLOGICAL RESONANCE DETECTED: 'GRAPHIC CORES' DISPUTE\nSTATUS: INITIATION SEQUENCE ACTIVE";
+  const el = document.getElementById("dylan-detect");
+  let j = 0;
+  function typeNext() {
+    if (j < dylanInfo.length) {
+      el.textContent += dylanInfo.charAt(j++);
+      setTimeout(typeNext, 25);
+    }
+  }
+  setTimeout(typeNext, 3000);
+</script>
 </body>
 </html>

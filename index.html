@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Torque_Sovereign Terminal Log</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body { background-color: #000; color: #00ff00; font-family: monospace; padding: 2rem; overflow-x: hidden; }
     .cursor { animation: blink 1s steps(1) infinite; display: inline-block; }
@@ -16,8 +17,12 @@
 </head>
 <body>
 
-<audio autoplay loop>
-  <source src="trump.mp3" type="audio/mpeg">
+<button onclick="document.getElementById('bg-audio').play()" style="background:black; color:#00ff00; font-family:monospace; border:1px solid #00ff00; padding:0.5rem 1rem; margin-bottom:2rem;">
+  Begin Sequence
+</button>
+
+<audio id="bg-audio" loop>
+  <source src="Trump.mp3" type="audio/mpeg">
 </audio>
 
 <pre id="terminal">

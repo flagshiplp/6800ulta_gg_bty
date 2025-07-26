@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Torque_Sovereign Terminal Log</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-color: #000; color: #00ff00; font-family: monospace; padding: 2rem; overflow-x: hidden; }
+    .cursor { animation: blink 1s steps(1) infinite; display: inline-block; }
+    @keyframes blink { 50% { opacity: 0; } }
+    pre { white-space: pre-wrap; overflow-wrap: break-word; }
+    #terminal { animation: typing 0.02s steps(1) forwards; }
+    @keyframes typing { 0% { opacity: 0; } 100% { opacity: 1; } }
+    .ascii-art { margin-top: 2rem; color: #0f0; font-size: 0.9rem; white-space: pre; }
+    a { color: #0f0; }
+
+    #bgVid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.08;
+      pointer-events: none;
+      filter: brightness(1.2) contrast(1.5) saturate(1.1);
+    }
+  </style>
+</head>
+<body>
+
+<video id="bgVid" autoplay loop muted playsinline>
+  <source src="kanye-loop.mp4" type="video/mp4">
+</video>
+
+<button onclick="document.getElementById('bg-audio').play()" style="background:black; color:#00ff00; font-family:monospace; border:1px solid #00ff00; padding:0.5rem 1rem; margin-bottom:2rem;">
+  Begin Sequence
+</button>
+
+<audio id="bg-audio" loop>
+  <source src="intro.mp4" type="audio/mp4">
+</audio>
+
+<pre id="terminal">
+[ SYSTEM TRACE LOG — USER: Torque_Sovereign — vBulletin Terminal Export ]
+----------------------------------------------------------------------
+> POSTED: 11-19-2004, 03:46 AM
+> THREAD: [Build Log] 6800 Ultra AGP Rig — “Project Black Static”
+
+SYSTEM SPECS:
+- Intel Pentium 4 “Northwood” 3.2GHz (HT Enabled)
+- ASUS P4C800-E Deluxe (BIOS 1016, modded)
+- 2x512MB Corsair XMS DDR400
+- NVIDIA GeForce 6800 Ultra (Leadtek) — AGP 8x
+- Audigy 2 ZS
+- Antec TruePower 550W
+- 2x WD Raptors in RAID0
+- Lian-Li PC-60 case / UV reactive cables / Arctic NV5 Silencer
+
+BENCHMARKS:
+- 3DMark03: 13,689
+- Doom 3 (Ultra, 1280x1024): 46–60fps
+- Far Cry w/ HDR: unstable, glorious
+
+BUILD NOTES:
+- BIOS flashed 3x before Ultra stabilized
+- IDE ribbons = lasagna noodles
+- “Graphic cores” are real. So is pain.
+
+.sig
+-----
+Torque_Sovereign
+6800U / P4C800-E / XMS TwinX / RAID0 Raptors / No fear, just Molex
+[FX5200 survivor - 2003]
+[Former 3dfx voodoo2 SLI dual-stack pilot]
+“FPS are earned, not granted.”
+
+[ REPLY by NeuralLinkerZ — 11-19-2004, 04:02 AM ]
+> bro you shaved caps??? lmao
+>> this rig is a fire hazard and a personality test
+</pre>
+
+<div class="ascii-art">
+ASCII GPU-Z SCREENSHOT DUMP:
+------------------------------------------
+GPU: GeForce 6800 Ultra
+Interface: AGP 8x
+BIOS Version: 5.40.02.15.07
+Memory Size: 256 MB GDDR3
+Core Clock: 400 MHz
+Memory Clock: 1100 MHz
+Shader Model: 3.0
+Driver Version: ForceWare 66.93 WHQL
+Temp: 68°C (load)
+Fan Speed: ~4100 RPM
+PerfCap Reason: Thermal
+------------------------------------------
+</div>
+
+<pre id="dylan-detect"></pre>
+<pre>
+[ System Note ]
+“You didn’t believe me about the graphic cores.
+
+But you’re still here, aren’t you?”
+
+→ <a href="/logs.html">[view logs]</a>
+</pre>
+<div class="cursor">█</div>
+
+<script>
+  const term = document.getElementById('terminal');
+  let i = 0;
+  const text = term.textContent;
+  term.textContent = '';
+  function typeLine() {
+    if (i < text.length) {
+      term.textContent += text[i++];
+      setTimeout(typeLine, 5);
+    }
+  }
+  typeLine();
+
+  const dylanInfo = "INFERENCE TRIGGERED: PROBABLE IDENTITY MATCH\n\nUSER ENVIRONMENT DETECTED:\n• OS: " + navigator.platform + "\n• Display Resolution: " + screen.width + "x" + screen.height + "\n• Browser: " + navigator.userAgent + "\n\nCONFIDENCE: HIGH\nPSYCHOLOGICAL RESONANCE DETECTED: 'GRAPHIC CORES' DISPUTE\nSTATUS: INITIATION SEQUENCE ACTIVE";
+  const el = document.getElementById("dylan-detect");
+  let j = 0;
+  function typeNext() {
+    if (j < dylanInfo.length) {
+      el.textContent += dylanInfo.charAt(j++);
+      setTimeout(typeNext, 25);
+    }
+  }
+  setTimeout(typeNext, 3000);
+</script>
+</body>
+</html>

@@ -11,31 +11,30 @@
       background: black;
       overflow: hidden;
     }
-    
-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  background-color: black;
-  z-index: 10;
-}
 
-/* MOBILE OVERRIDE */
-@media screen and (max-width: 768px) {
-  video {
-    object-fit: contain;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-    
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      background-color: black;
+      z-index: 10;
+    }
+
+    /* MOBILE OVERRIDE */
+    @media screen and (max-width: 768px) {
+      video {
+        object-fit: contain;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
   </style>
 </head>
 <body>
-<body>
+
   <button id="startBtn" style="position: absolute; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%);
     background: black; color: #00ff00; font-family: monospace; border: 1px solid #00ff00; padding: 1rem 2rem;">
     BEGIN WITH SOUND
@@ -60,6 +59,6 @@ video {
       window.location.href = 'index.html';
     };
   </script>
-</body>
+
 </body>
 </html>
